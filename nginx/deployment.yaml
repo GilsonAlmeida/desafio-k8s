@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: desafio-nginx
+  labels:
+    app: desafio-nginx
+spec:
+  selector:
+    matchLabels:
+      app: desafio-nginx
+  replicas: 3
+  template:  
+    metadata: 
+      labels:
+        app: desafio-nginx
+    spec:
+      containers:
+
+      - name: desafio-nginx
+        image: nginx:1.17-alpine
+        ports:
+        - containerPort: 80
+
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d  
+          name: nginx-conf              
+          readOnly: true
+
+      volumes:                
+      - name: nginx-conf
+        configMap:            
+          name: nginx-conf-desafio-01
+          items:
+          - key: nginx.conf
+            path: nginx.conf  
