@@ -7,10 +7,13 @@ data:
     server {
       listen 80;
       index index.php index.html;
-      root /usr/share/nginx/html;
+      root /usr/share/nginx/html;      
       
-      location / {
-        return 200 'Code.education Rocks.';
-        add_header Content-Type text/plain;
-      }
     }
+
+  index.html: |
+    <html>
+        <body>
+            <h1> Code.education Rocks!!!! </h1>
+        </body>
+    </html>

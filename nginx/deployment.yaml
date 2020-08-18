@@ -26,10 +26,23 @@ spec:
           name: nginx-conf              
           readOnly: true
 
+        - mountPath: /usr/share/nginx/html
+          name: nginx-root
+          readOnly: true
+
       volumes:                
-      - name: nginx-conf
-        configMap:            
-          name: nginx-conf-desafio-01
-          items:
-          - key: nginx.conf
-            path: nginx.conf  
+        - name: nginx-conf
+
+          configMap:
+            name: nginx-conf-desafio-01
+            items:
+                - key: nginx.conf
+                  path: nginx.conf
+    
+        - name: nginx-root
+    
+          configMap:
+            name: nginx-conf-desafio-01
+            items:
+                - key: index.html
+                  path: index.html
