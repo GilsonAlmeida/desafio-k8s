@@ -1,5 +1,4 @@
 steps:
-
     - id: go_version
       name: 'gcr.io/cloud-builders/go'
       args: ['version']
@@ -18,7 +17,5 @@ steps:
     - id: docker_build
       name: 'gcr.io/cloud-builders/docker'
       args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './']
-  
-
   images:
     - 'gcr.io/$PROJECT_ID/go:latest'
