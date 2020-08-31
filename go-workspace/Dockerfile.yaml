@@ -1,5 +1,5 @@
 FROM golang
 
-COPY ./go-workspace/src/hello ./
+COPY ./src/hello ./
 
 ENTRYPOINT ["./hello"]
