@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-hpa  
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-go
+  template:
+    metadata:
+      labels:
+        app: app-go
+    spec:
+      containers:
+
+      - name: app-go
+        image: gcr.io/codeeducation-test-279322/go
+
+        ports: 
+        - name: http
+          containerPort: 8000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-hpa
+spec:
+  selector: 
+    app: app-go
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 8000
