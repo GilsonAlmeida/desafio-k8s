@@ -4,7 +4,7 @@ WORKDIR /build
 
 
 
-COPY ./src ./
+COPY ./hpa/go-workspace/src ./
 
 
 RUN go build main.go
