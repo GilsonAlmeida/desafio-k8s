@@ -6,12 +6,12 @@ steps:
   
     - id: execute_test
       name: 'gcr.io/cloud-builders/go'
-      args: ['test','./go-workspace/src/hello']
+      args: ['test','./go-workspace/src']
       env: ['GOPATH=.','CGO_ENABLED=0', 'GOOS=linux', 'GOARCH=amd64']
   
     - id: go_build
       name: 'gcr.io/cloud-builders/go'
-      args: ['build', '-o', './go-workspace/src/hello', './go-workspace/src/hello']
+      args: ['build', '-o', './go-workspace/src', './go-workspace/src']
       env: ['GOPATH=.']
   
     - id: docker_build
