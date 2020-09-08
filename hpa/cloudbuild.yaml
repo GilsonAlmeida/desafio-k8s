@@ -6,7 +6,7 @@ steps:
   
     - id: execute_test
       name: 'gcr.io/cloud-builders/go'
-      args: ['test','./go-workspace/src']
+      args: ['test','./hpa/go-workspace/src']
       env: ['GOPATH=.','CGO_ENABLED=0', 'GOOS=linux', 'GOARCH=amd64']
   
     - id: go_build
