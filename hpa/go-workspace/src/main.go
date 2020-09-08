@@ -6,20 +6,18 @@ import (
 	"net/http"
 )
 
-func sqrt()  {
+func sqrt() string  {
 	x := 0.0001
 
-	fmt.Sprintf("oi",x)
 	for i := 0; i <= 1000000; i++ {
-		x += math.Sqrt(x)
-		
+		x += math.Sqrt(x)		
 	}
-
+	
+	return "Code.education Rocks!" ;
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	sqrt()
-	fmt.Fprintf(w, greeting("Code.education Rocks!"))
+	fmt.Fprintf(w, sqrt())
 
 }
 

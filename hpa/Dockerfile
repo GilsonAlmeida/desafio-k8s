@@ -4,10 +4,10 @@ WORKDIR /build
 
 
 
-COPY ./src/hello ./
+COPY ./src ./
 
 
-RUN go build hello.go
+RUN go build main.go
 
 WORKDIR /dist
 
