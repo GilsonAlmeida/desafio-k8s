@@ -9,11 +9,11 @@ COPY ./src ./
 
 RUN go build main.go
 
-WORKDIR /dist
+#WORKDIR /dist
 
-RUN cp  /build  ./
+#RUN cp  /build  ./
 
-FROM alpine:latest
-COPY --chown=0:0 --from=builder /dist/ /
+#FROM alpine:latest
+#COPY --chown=0:0 --from=builder /dist/ /
 
 ENTRYPOINT ["./"]
