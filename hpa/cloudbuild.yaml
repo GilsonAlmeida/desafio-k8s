@@ -16,7 +16,7 @@ steps:
   
     - id: docker_build
       name: 'gcr.io/cloud-builders/docker'
-      args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './hpa/']
+      args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './hpa/go-workspace/']
 
     - id: "Push image Docker"
       name: 'gcr.io/cloud-builders/docker'

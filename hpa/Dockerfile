@@ -4,16 +4,16 @@ WORKDIR /build
 
 
 
-COPY ./hpa/go-workspace/src ./
+COPY ./src ./
 
 
 RUN go build main.go
 
 WORKDIR /dist
 
-RUN cp  /build/hello  ./hello
+RUN cp  /build  ./
 
 FROM alpine:latest
-COPY --chown=0:0 --from=builder /dist/hello /hello
+COPY --chown=0:0 --from=builder /dist/ /
 
-ENTRYPOINT ["./hello"]
+ENTRYPOINT ["./"]
