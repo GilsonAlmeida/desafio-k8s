@@ -29,7 +29,7 @@ steps:
       args:
         - '-c'
         - |
-          sed 's#img-app-deployment#gcr.io/$PROJECT_ID/go:latest:$SHORT_SHA#g' go-workspace/deployment.yaml > go-workspace/deployment-new.yaml;
+          sed 's#img-app-deployment#gcr.io/$PROJECT_ID/go:$SHORT_SHA#g' go-workspace/deployment.yaml > go-workspace/deployment-new.yaml;
           cat go-workspace/deployment-new.yaml
 
     - id: 'Deployment K8s'
