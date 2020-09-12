@@ -13,7 +13,6 @@ spec:
         app: app-go
     spec:
       containers:
-
       - name: app-go        
         image: img-app-deployment
 
