@@ -14,9 +14,9 @@ steps:
       args: ['build', '-o', './go-workspace/src/hello', './go-workspace/src/hello']
       env: ['GOPATH=.']
   
-    - id: docker_build
-      name: 'gcr.io/cloud-builders/docker'
-      args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './go-workspace/']
+  #  - id: docker_build
+  #    name: 'gcr.io/cloud-builders/docker'
+  #    args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './go-workspace/']
 
 
 
