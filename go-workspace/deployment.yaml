@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
 
-      - name: app-go
-        #image: gcr.io/codeeducation-test-279322/go
+      - name: app-go        
          image: img-app-deployment
 
         ports: 
