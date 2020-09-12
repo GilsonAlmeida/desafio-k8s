@@ -15,7 +15,7 @@ spec:
       containers:
 
       - name: app-go        
-         image: img-app-deployment
+        image: img-app-deployment
 
         ports: 
         - name: http
