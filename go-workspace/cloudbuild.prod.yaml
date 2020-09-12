@@ -21,7 +21,7 @@ steps:
 
     - id: "Pushing image"
       name: 'gcr.io/cloud-builders/docker'
-      args: ['push','gcr.io/$PROJECT_ID/go:latest:$SHORT_SHA']
+      args: ['push','gcr.io/$PROJECT_ID/go:$SHORT_SHA']
 
 
     - id: 'Adjusting deployment file -K8s' 
